@@ -7,11 +7,11 @@ import {
   Image,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { TextField } from '../../../components/ui/TextField';
-import { Button } from '../../../components/ui/Button';
-import { PaginationDots } from '../../../components/ui/PaginationDots';
-import { resetPasswordSchema } from '../../../utils/validation';
+import { RootStackParamList } from '@/navigation/types';
+import { TextField } from '@/components/ui/TextField';
+import { Button } from '@/components/ui/Button';
+import { PaginationDots } from '@/components/ui/PaginationDots';
+import { resetPasswordSchema } from '@/utils/validation';
 import { Lock } from 'lucide-react-native';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ResetPassword'>;
@@ -51,16 +51,14 @@ export const ResetPasswordScreen: React.FC<Props> = ({ navigation }) => {
         keyboardShouldPersistTaps="handled"
       >
         <View className="items-center">
-          {/* Illustration from Figma */}
           <View className="w-56 h-56 items-center justify-center mb-2">
             <Image
-              source={require('../../../assets/images/reset-pwd-illustration.png')}
+              source={require('@/assets/images/reset-pwd-illustration.png')}
               className="w-full h-full"
               resizeMode="contain"
             />
           </View>
 
-          {/* Heading */}
           <Text className="text-[28px] font-bold text-black text-center mb-1">
             Reset Password
           </Text>
@@ -68,7 +66,6 @@ export const ResetPasswordScreen: React.FC<Props> = ({ navigation }) => {
             Create a new password.
           </Text>
 
-          {/* Form Fields */}
           <View className="w-full gap-4">
             <TextField
               placeholder="New Password"
@@ -98,7 +95,6 @@ export const ResetPasswordScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Footer Actions */}
         <View className="items-center gap-5 mt-6 mb-2">
           <Button
             title="Create a new password."

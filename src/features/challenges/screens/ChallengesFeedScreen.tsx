@@ -8,13 +8,13 @@ import {
   TextInput,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { RootStackParamList } from '@/navigation/types';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import {
   setSelectedCategory,
   setSearchQuery,
   Challenge,
-} from '../../../store/slices/challengesSlice';
+} from '@/store/slices/challengesSlice';
 import { Search, Trophy, Clock, Users, ArrowRight } from 'lucide-react-native';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Main'>;
@@ -52,7 +52,6 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
         elevation: 3,
       }}
     >
-      {/* Category & Reward Badge */}
       <View className="flex-row items-center justify-between mb-3">
         <View className="bg-[rgba(126,93,246,0.12)] px-3 py-1 rounded-full">
           <Text className="text-[#7E5DF6] text-xs font-semibold">
@@ -66,12 +65,10 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
         </View>
       </View>
 
-      {/* Title */}
       <Text className="text-[18px] font-bold text-[#111827] mb-2 leading-6">
         {item.title}
       </Text>
 
-      {/* Description */}
       <Text
         numberOfLines={2}
         className="text-[14px] text-[#6B7280] mb-4 leading-5"
@@ -79,7 +76,6 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
         {item.description}
       </Text>
 
-      {/* Tags */}
       <View className="flex-row flex-wrap gap-1.5 mb-4">
         {item.tags.map((tag, idx) => (
           <View
@@ -93,7 +89,6 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
         ))}
       </View>
 
-      {/* Footer Info */}
       <View className="flex-row items-center justify-between pt-3 border-t border-[#F3F4F6]">
         <View className="flex-row items-center gap-4">
           <View className="flex-row items-center gap-1">
@@ -118,7 +113,6 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
 
   return (
     <SafeAreaView className="flex-1 bg-[#F9FAFB]">
-      {/* Header */}
       <View className="px-6 pt-4 pb-2 bg-white border-b border-[#F3F4F6]">
         <View className="flex-row items-center justify-between mb-3">
           <View>
@@ -131,7 +125,6 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Search Input */}
         <View className="h-12 bg-[#F3F4F6] rounded-2xl px-4 flex-row items-center mb-3">
           <Search size={18} color="#9CA3AF" />
           <TextInput
@@ -143,7 +136,6 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
           />
         </View>
 
-        {/* Category Chips */}
         <View className="flex-row gap-2 pb-2">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat;
@@ -169,7 +161,6 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
         </View>
       </View>
 
-      {/* Challenge List */}
       <FlatList
         data={filtered}
         keyExtractor={(item) => item.id}

@@ -8,13 +8,13 @@ import {
   Image,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { TextField } from '../../../components/ui/TextField';
-import { Button } from '../../../components/ui/Button';
-import { PaginationDots } from '../../../components/ui/PaginationDots';
-import { registerSchema } from '../../../utils/validation';
-import { useAppDispatch } from '../../../store/hooks';
-import { loginSuccess } from '../../../store/slices/authSlice';
+import { RootStackParamList } from '@/navigation/types';
+import { TextField } from '@/components/ui/TextField';
+import { Button } from '@/components/ui/Button';
+import { PaginationDots } from '@/components/ui/PaginationDots';
+import { registerSchema } from '@/utils/validation';
+import { useAppDispatch } from '@/store/hooks';
+import { loginSuccess } from '@/store/slices/authSlice';
 import { User as UserIcon, Mail, Lock } from 'lucide-react-native';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Register'>;
@@ -74,16 +74,14 @@ export const RegisterScreen: React.FC<Props> = ({ navigation }) => {
         keyboardShouldPersistTaps="handled"
       >
         <View className="items-center">
-          {/* Hero Illustration from Figma */}
           <View className="w-52 h-44 items-center justify-center my-2">
             <Image
-              source={require('../../../assets/images/register-illustration.png')}
+              source={require('@/assets/images/register-illustration.png')}
               className="w-full h-full"
               resizeMode="contain"
             />
           </View>
 
-          {/* Heading */}
           <Text className="text-[26px] font-bold text-black text-center mb-1">
             Create Your Account
           </Text>
@@ -91,7 +89,6 @@ export const RegisterScreen: React.FC<Props> = ({ navigation }) => {
             Join our community and start exploring new opportunities.
           </Text>
 
-          {/* Form Fields */}
           <View className="w-full gap-3.5">
             <TextField
               placeholder="Full Name"
@@ -167,7 +164,6 @@ export const RegisterScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Footer Actions */}
         <View className="items-center gap-4 mt-6 mb-2">
           <View className="flex-row items-center justify-center gap-4 w-full">
             <Button

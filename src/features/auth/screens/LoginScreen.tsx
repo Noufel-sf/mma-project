@@ -8,13 +8,13 @@ import {
   Image,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { TextField } from '../../../components/ui/TextField';
-import { Button } from '../../../components/ui/Button';
-import { PaginationDots } from '../../../components/ui/PaginationDots';
-import { loginSchema } from '../../../utils/validation';
-import { useAppDispatch } from '../../../store/hooks';
-import { loginSuccess } from '../../../store/slices/authSlice';
+import { RootStackParamList } from '@/navigation/types';
+import { TextField } from '@/components/ui/TextField';
+import { Button } from '@/components/ui/Button';
+import { PaginationDots } from '@/components/ui/PaginationDots';
+import { loginSchema } from '@/utils/validation';
+import { useAppDispatch } from '@/store/hooks';
+import { loginSuccess } from '@/store/slices/authSlice';
 import { Mail, Lock } from 'lucide-react-native';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
@@ -67,21 +67,18 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
         keyboardShouldPersistTaps="handled"
       >
         <View className="items-center">
-          {/* Hero Illustration from Figma */}
           <View className="w-56 h-48 items-center justify-center my-2">
             <Image
-              source={require('../../../assets/images/login-illustration.png')}
+              source={require('@/assets/images/login-illustration.png')}
               className="w-full h-full"
               resizeMode="contain"
             />
           </View>
 
-          {/* Heading */}
           <Text className="text-[28px] font-bold text-black text-center mb-6">
             Welcome Back!
           </Text>
 
-          {/* Form Fields */}
           <View className="w-full gap-4 mb-3">
             <TextField
               placeholder="Email"
@@ -110,7 +107,6 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
             />
           </View>
 
-          {/* Remember Me / Forgot Password */}
           <View className="w-full flex-row items-center justify-end my-2">
             <TouchableOpacity
               onPress={() => setRememberMe(!rememberMe)}
@@ -129,7 +125,6 @@ export const LoginScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Footer Actions */}
         <View className="items-center gap-4 mt-6">
           <Button
             title="Log In"

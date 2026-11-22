@@ -7,11 +7,11 @@ import {
   Image,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { RoleCard } from '../../../components/ui/RoleCard';
-import { Button } from '../../../components/ui/Button';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { setSelectedRole } from '../../../store/slices/authSlice';
+import { RootStackParamList } from '@/navigation/types';
+import { RoleCard } from '@/components/ui/RoleCard';
+import { Button } from '@/components/ui/Button';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { setSelectedRole } from '@/store/slices/authSlice';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'AccountType'>;
 
@@ -26,16 +26,14 @@ export const AccountTypeScreen: React.FC<Props> = ({ navigation }) => {
         className="px-6 py-6 justify-between"
       >
         <View className="items-center">
-          {/* Header Illustration from Figma */}
           <View className="w-56 h-56 items-center justify-center mb-4">
             <Image
-              source={require('../../../assets/images/account-type-illustration.png')}
+              source={require('@/assets/images/account-type-illustration.png')}
               className="w-full h-full"
               resizeMode="contain"
             />
           </View>
 
-          {/* Heading */}
           <Text className="text-[26px] font-bold text-black text-center mb-1">
             Choose Your Account Type
           </Text>
@@ -43,7 +41,6 @@ export const AccountTypeScreen: React.FC<Props> = ({ navigation }) => {
             How would you like to use Point 43?
           </Text>
 
-          {/* Role Cards */}
           <RoleCard
             title="Solution Seeker"
             description="I want to explore challenges, collaborate with others, and submit innovative solutions."
@@ -59,7 +56,6 @@ export const AccountTypeScreen: React.FC<Props> = ({ navigation }) => {
           />
         </View>
 
-        {/* Action Buttons matching Figma: return & next */}
         <View className="flex-row items-center justify-center gap-4 mt-6 mb-2">
           <Button
             title="return"

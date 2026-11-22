@@ -6,9 +6,9 @@ import {
   ScrollView,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { Button } from '../../../components/ui/Button';
-import { PaginationDots } from '../../../components/ui/PaginationDots';
+import { RootStackParamList } from '@/navigation/types';
+import { Button } from '@/components/ui/Button';
+import { PaginationDots } from '@/components/ui/PaginationDots';
 import Svg, { Path } from 'react-native-svg';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
@@ -21,7 +21,6 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
         className="px-6 py-8 justify-between"
       >
         <View className="items-center justify-center flex-1 my-6">
-          {/* Main Hero Graphic: Figma Union + .43 */}
           <View className="items-center justify-center relative my-4">
             <Svg
               width={260}
@@ -35,7 +34,6 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
               />
             </Svg>
 
-            {/* .43 Large Overlay */}
             <View className="absolute bottom-6 right-6">
               <Text className="text-[72px] font-bold text-black">
                 <Text className="text-[#7E5DF6]">.</Text>43
@@ -43,19 +41,16 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
             </View>
           </View>
 
-          {/* Heading */}
           <Text className="text-[32px] font-bold text-[#1F2937] text-center mt-6 mb-3">
             Welcome to Point.43
           </Text>
 
-          {/* Subtitle */}
           <Text className="text-[16px] text-[#6B7280] text-center leading-[24px] px-2">
             Discover challenges, share innovative ideas, and collaborate with
             others to create meaningful solutions.
           </Text>
         </View>
 
-        {/* Footer Actions */}
         <View className="items-center gap-5 mt-4">
           <Button
             title="متابعة"
@@ -64,7 +59,6 @@ export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
             size="lg"
             style={{ width: 180 }}
           />
-
           <PaginationDots total={2} activeIndex={0} />
         </View>
       </ScrollView>

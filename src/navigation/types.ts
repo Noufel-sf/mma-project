@@ -15,6 +15,7 @@ export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
   ForgotPassword: undefined;
+  OtpVerification: { email: string };
   ResetPassword: { email?: string };
   Main: NavigatorScreenParams<MainTabParamList>;
   ChallengeDetail: { challengeId: string };

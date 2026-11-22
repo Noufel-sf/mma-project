@@ -7,11 +7,11 @@ import {
   Image,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { TextField } from '../../../components/ui/TextField';
-import { Button } from '../../../components/ui/Button';
-import { PaginationDots } from '../../../components/ui/PaginationDots';
-import { forgotPasswordSchema } from '../../../utils/validation';
+import { RootStackParamList } from '@/navigation/types';
+import { TextField } from '@/components/ui/TextField';
+import { Button } from '@/components/ui/Button';
+import { PaginationDots } from '@/components/ui/PaginationDots';
+import { forgotPasswordSchema } from '@/utils/validation';
 import { Mail } from 'lucide-react-native';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ForgotPassword'>;
@@ -33,7 +33,7 @@ export const ForgotPasswordScreen: React.FC<Props> = ({ navigation }) => {
 
     setTimeout(() => {
       setLoading(false);
-      navigation.navigate('ResetPassword', { email });
+      navigation.navigate('OtpVerification', { email });
     }, 600);
   };
 
@@ -48,7 +48,7 @@ export const ForgotPasswordScreen: React.FC<Props> = ({ navigation }) => {
           {/* Illustration from Figma */}
           <View className="w-56 h-56 items-center justify-center mb-2">
             <Image
-              source={require('../../../assets/images/forgot-pwd-illustration.png')}
+              source={require('@/assets/images/forgot-pwd-illustration.png')}
               className="w-full h-full"
               resizeMode="contain"
             />
@@ -97,7 +97,7 @@ export const ForgotPasswordScreen: React.FC<Props> = ({ navigation }) => {
             />
           </View>
 
-          <PaginationDots total={2} activeIndex={0} />
+          <PaginationDots total={3} activeIndex={0} />
         </View>
       </ScrollView>
     </SafeAreaView>

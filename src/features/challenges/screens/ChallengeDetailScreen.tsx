@@ -8,9 +8,9 @@ import {
   Alert,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { useAppSelector } from '../../../store/hooks';
-import { Button } from '../../../components/ui/Button';
+import { RootStackParamList } from '@/navigation/types';
+import { useAppSelector } from '@/store/hooks';
+import { Button } from '@/components/ui/Button';
 import {
   ArrowLeft,
   Trophy,
@@ -51,7 +51,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
 
   return (
     <SafeAreaView className="flex-1 bg-white">
-      {/* Top Bar */}
       <View className="flex-row items-center justify-between px-6 py-4 border-b border-[#F3F4F6]">
         <TouchableOpacity
           onPress={() => navigation.goBack()}
@@ -66,7 +65,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
       </View>
 
       <ScrollView className="flex-1 px-6 py-5">
-        {/* Category & Status */}
         <View className="flex-row items-center justify-between mb-3">
           <View className="bg-[rgba(126,93,246,0.12)] px-3 py-1 rounded-full">
             <Text className="text-[#7E5DF6] text-xs font-semibold">
@@ -81,7 +79,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
           </View>
         </View>
 
-        {/* Title */}
         <Text className="text-2xl font-bold text-[#111827] mb-2 leading-8">
           {challenge.title}
         </Text>
@@ -90,7 +87,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
           Posted by <Text className="font-semibold text-black">{challenge.providerName}</Text>
         </Text>
 
-        {/* Highlight Card */}
         <View className="bg-[#7E5DF6]/5 border border-[#7E5DF6]/20 rounded-2xl p-4 flex-row justify-around items-center mb-6">
           <View className="items-center">
             <Trophy size={20} color="#7E5DF6" />
@@ -111,7 +107,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
           </View>
         </View>
 
-        {/* Description Section */}
         <View className="mb-6">
           <Text className="text-lg font-bold text-black mb-2">Description</Text>
           <Text className="text-[15px] text-[#4B5563] leading-[24px]">
@@ -119,7 +114,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
           </Text>
         </View>
 
-        {/* Key Deliverables */}
         <View className="mb-6">
           <Text className="text-lg font-bold text-black mb-3">Key Deliverables</Text>
           {[
@@ -134,7 +128,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
           ))}
         </View>
 
-        {/* Tags */}
         <View className="mb-8">
           <Text className="text-lg font-bold text-black mb-3">Required Skills</Text>
           <View className="flex-row flex-wrap gap-2">
@@ -147,7 +140,6 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
         </View>
       </ScrollView>
 
-      {/* Bottom Submit Action */}
       <View className="p-5 border-t border-[#F3F4F6] bg-white">
         <Button
           title={submitted ? 'Solution Submitted ✓' : 'Submit Solution'}

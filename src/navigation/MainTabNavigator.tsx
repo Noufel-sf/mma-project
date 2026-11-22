@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { Text, SafeAreaView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MainTabParamList } from './types';
-import { ChallengesFeedScreen } from '../features/challenges/screens/ChallengesFeedScreen';
-import { ProfileScreen } from '../features/profile/screens/ProfileScreen';
+import { MainTabParamList } from '@/navigation/types';
+import { ChallengesFeedScreen } from '@/features/challenges/screens/ChallengesFeedScreen';
+import { ProfileScreen } from '@/features/profile/screens/ProfileScreen';
 import {
   Home,
   FolderKanban,

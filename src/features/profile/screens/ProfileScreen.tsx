@@ -9,11 +9,10 @@ import {
   Alert,
 } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { useAppDispatch, useAppSelector } from '../../../store/hooks';
-import { logout } from '../../../store/slices/authSlice';
-import { TextField } from '../../../components/ui/TextField';
-import { Button } from '../../../components/ui/Button';
+import { RootStackParamList } from '@/navigation/types';
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { logout } from '@/store/slices/authSlice';
+import { TextField } from '@/components/ui/TextField';
 import {
   Building2,
   MapPin,
@@ -50,18 +49,15 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <ScrollView className="flex-1 px-6 py-6" showsVerticalScrollIndicator={false}>
-        {/* Profile Top Section matching Figma */}
         <View className="flex-row items-center justify-between mb-4">
-          {/* Avatar with purple ring */}
           <View className="w-24 h-24 rounded-full border-4 border-[#5D67BC] p-1 items-center justify-center overflow-hidden shadow-sm">
             <Image
-              source={require('../../../assets/images/avatar.png')}
+              source={require('@/assets/images/avatar.png')}
               className="w-full h-full rounded-full"
               resizeMode="cover"
             />
           </View>
 
-          {/* Quick Action Icons: Edit & Share */}
           <View className="flex-row items-center gap-2">
             <TouchableOpacity
               activeOpacity={0.8}
@@ -79,7 +75,6 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* User Info Block */}
         <View className="mb-6">
           <Text className="text-[22px] font-bold text-[#111827] mb-1">
             {fullName}
@@ -104,7 +99,6 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
           </Text>
         </View>
 
-        {/* Tab Selector matching Figma */}
         <View className="flex-row items-center justify-between mb-6">
           <TouchableOpacity
             onPress={() => setActiveTab('personal')}
@@ -158,7 +152,6 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        {/* Tab Content Fields */}
         <View className="mb-8">
           <Text className="text-[18px] font-bold text-black mb-1">
             Professional Profile
@@ -188,7 +181,6 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Logout Action */}
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={handleLogout}

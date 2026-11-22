@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, SafeAreaView } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../../navigation/types';
-import { Logo } from '../../../components/ui/Logo';
-import { ProgressBar } from '../../../components/ui/ProgressBar';
-import { useAppSelector } from '../../../store/hooks';
+import { RootStackParamList } from '@/navigation/types';
+import { Logo } from '@/components/ui/Logo';
+import { ProgressBar } from '@/components/ui/ProgressBar';
+import { useAppSelector } from '@/store/hooks';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'Splash'>;
 
@@ -40,10 +40,7 @@ export const SplashScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="flex-1 items-center justify-center px-6">
-        {/* Center Logo with Slogan & .43 */}
         <Logo size="lg" showSlogan showNumber />
-
-        {/* Loading Progress Bar matching Figma */}
         <View className="mt-8">
           <ProgressBar progress={progress} width={80} />
         </View>
