@@ -1,0 +1,21 @@
+import { NavigatorScreenParams } from '@react-navigation/native';
+
+export type MainTabParamList = {
+  Feed: undefined;
+  Challenges: undefined;
+  Calendar: undefined;
+  Documents: undefined;
+  Profile: undefined;
+};
+
+export type RootStackParamList = {
+  Splash: undefined;
+  Welcome: undefined;
+  AccountType: undefined;
+  Login: undefined;
+  Register: undefined;
+  ForgotPassword: undefined;
+  ResetPassword: { email?: string };
+  Main: NavigatorScreenParams<MainTabParamList>;
+  ChallengeDetail: { challengeId: string };
+};
