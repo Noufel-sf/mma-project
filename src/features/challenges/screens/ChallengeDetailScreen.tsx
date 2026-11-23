@@ -71,7 +71,10 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
               {challenge.category}
             </Text>
           </View>
-          <View className="bg-[#10B981]/10 px-3 py-1 rounded-full flex-row items-center gap-1">
+          <View
+            className="px-3 py-1 rounded-full flex-row items-center gap-1"
+            style={{ backgroundColor: 'rgba(16, 185, 129, 0.1)' }}
+          >
             <ShieldCheck size={14} color="#10B981" />
             <Text className="text-[#10B981] text-xs font-semibold">
               Verified Provider

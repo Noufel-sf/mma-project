@@ -48,12 +48,16 @@ export const CompleteProfileScreen: React.FC<Props> = ({ navigation }) => {
             <TouchableOpacity
               activeOpacity={0.8}
               onPress={() => setPhotoAdded(!photoAdded)}
-              className="w-full h-[60px] bg-white border border-[#E1E3E4] rounded-[24px] px-5 flex-row items-center justify-between shadow-xs"
+              className="w-full h-[60px] bg-white border border-[#E1E3E4] rounded-[24px] px-5 flex-row items-center justify-between"
+              style={{ elevation: 1 }}
             >
               <Text className={`text-[15px] font-medium ${photoAdded ? 'text-[#1F2937]' : 'text-[#9CA3AF]'}`}>
                 {photoAdded ? 'Profile Photo Selected ✓' : 'Profile Photo'}
               </Text>
-              <View className="w-8 h-8 rounded-full bg-[#7E5DF6]/10 items-center justify-center">
+              <View
+                className="w-8 h-8 rounded-full items-center justify-center"
+                style={{ backgroundColor: 'rgba(126, 93, 246, 0.1)' }}
+              >
                 <Camera size={18} color="#7E5DF6" />
               </View>
             </TouchableOpacity>

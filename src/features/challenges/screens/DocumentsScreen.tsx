@@ -111,7 +111,10 @@ export const DocumentsScreen: React.FC = () => {
               Documents & Specs
             </Text>
           </View>
-          <View className="w-10 h-10 rounded-full bg-[#7E5DF6]/10 items-center justify-center">
+          <View
+            className="w-10 h-10 rounded-full items-center justify-center"
+            style={{ backgroundColor: 'rgba(126, 93, 246, 0.1)' }}
+          >
             <BookOpen size={20} color="#7E5DF6" />
           </View>
         </View>
@@ -162,10 +165,14 @@ export const DocumentsScreen: React.FC = () => {
         {filtered.map((doc) => (
           <View
             key={doc.id}
-            className="bg-white rounded-[20px] p-4 mb-3.5 border border-[#E8EFF3] flex-row items-center justify-between shadow-xs"
+            className="bg-white rounded-[20px] p-4 mb-3.5 border border-[#E8EFF3] flex-row items-center justify-between"
+            style={{ elevation: 1 }}
           >
             <View className="flex-row items-start gap-3 flex-1 pr-3">
-              <View className="w-10 h-10 rounded-2xl bg-[#7E5DF6]/10 items-center justify-center mt-0.5">
+              <View
+                className="w-10 h-10 rounded-2xl items-center justify-center mt-0.5"
+                style={{ backgroundColor: 'rgba(126, 93, 246, 0.1)' }}
+              >
                 {doc.category === 'Templates' ? (
                   <FileCode size={20} color="#7E5DF6" />
                 ) : doc.category === 'Rules' ? (

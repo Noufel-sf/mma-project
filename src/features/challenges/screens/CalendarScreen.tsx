@@ -99,7 +99,10 @@ export const CalendarScreen: React.FC = () => {
               Event Calendar
             </Text>
           </View>
-          <View className="w-10 h-10 rounded-full bg-[#7E5DF6]/10 items-center justify-center">
+          <View
+            className="w-10 h-10 rounded-full items-center justify-center"
+            style={{ backgroundColor: 'rgba(126, 93, 246, 0.1)' }}
+          >
             <CalendarIcon size={20} color="#7E5DF6" />
           </View>
         </View>
@@ -187,7 +190,8 @@ export const CalendarScreen: React.FC = () => {
           <TouchableOpacity
             key={event.id}
             activeOpacity={0.85}
-            className="bg-white rounded-[20px] p-4 mb-3.5 border border-[#E8EFF3] shadow-xs"
+            className="bg-white rounded-[20px] p-4 mb-3.5 border border-[#E8EFF3]"
+            style={{ elevation: 1 }}
           >
             <View className="flex-row items-center justify-between mb-2">
               <View className="bg-[rgba(126,93,246,0.1)] px-2.5 py-0.5 rounded-full">

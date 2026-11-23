@@ -11,9 +11,9 @@ export default function App() {
   return (
     <Provider store={store}>
       <SafeAreaProvider initialMetrics={initialWindowMetrics}>
+        <StatusBar style="dark" />
         <NavigationContainer>
           <RootNavigator />
-          <StatusBar style="dark" />
         </NavigationContainer>
       </SafeAreaProvider>
     </Provider>

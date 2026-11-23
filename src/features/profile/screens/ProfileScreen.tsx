@@ -50,7 +50,10 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
     <SafeAreaView edges={['top', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
       <ScrollView className="flex-1 px-6 py-4" showsVerticalScrollIndicator={false}>
         <View className="flex-row items-center justify-between mb-4">
-          <View className="w-24 h-24 rounded-full border-4 border-[#5D67BC] p-1 items-center justify-center overflow-hidden shadow-sm">
+          <View
+            className="w-24 h-24 rounded-full border-4 border-[#5D67BC] p-1 items-center justify-center overflow-hidden"
+            style={{ elevation: 2 }}
+          >
             <Image
               source={require('@/assets/images/avatar.png')}
               className="w-full h-full rounded-full"
@@ -61,14 +64,16 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
           <View className="flex-row items-center gap-2">
             <TouchableOpacity
               activeOpacity={0.8}
-              className="w-11 h-11 bg-white border border-[#E8EFF3] rounded-full items-center justify-center shadow-xs"
+              className="w-11 h-11 bg-white border border-[#E8EFF3] rounded-full items-center justify-center"
+              style={{ elevation: 1 }}
             >
               <Edit2 size={16} color="#1F2937" />
             </TouchableOpacity>
 
             <TouchableOpacity
               activeOpacity={0.8}
-              className="w-11 h-11 bg-white border border-[#E8EFF3] rounded-full items-center justify-center shadow-xs"
+              className="w-11 h-11 bg-white border border-[#E8EFF3] rounded-full items-center justify-center"
+              style={{ elevation: 1 }}
             >
               <Share2 size={16} color="#1F2937" />
             </TouchableOpacity>

@@ -17,7 +17,7 @@ import { ShieldCheck } from 'lucide-react-native';
 type Props = NativeStackScreenProps<RootStackParamList, 'OtpVerification'>;
 
 export const OtpVerificationScreen: React.FC<Props> = ({ route, navigation }) => {
-  const { email } = route.params;
+  const email = route?.params?.email || '';
   const [code, setCode] = useState(['', '', '', '', '', '']);
   const [loading, setLoading] = useState(false);
   const inputRefs = useRef<any[]>([]);
@@ -39,6 +39,7 @@ export const OtpVerificationScreen: React.FC<Props> = ({ route, navigation }) =>
   };
 
   const handleVerify = () => {
+    if (loading) return;
     const fullCode = code.join('');
     if (fullCode.length < 6) {
       Alert.alert('Incomplete Code', 'Please enter the full 6-digit verification code.');
@@ -49,7 +50,7 @@ export const OtpVerificationScreen: React.FC<Props> = ({ route, navigation }) =>
     setTimeout(() => {
       setLoading(false);
       navigation.navigate('ResetPassword', { email });
-    }, 600);
+    }, 400);
   };
 
   const handleResend = () => {
@@ -65,7 +66,10 @@ export const OtpVerificationScreen: React.FC<Props> = ({ route, navigation }) =>
       >
         <View className="items-center">
           {/* Top Badge Icon */}
-          <View className="w-24 h-24 rounded-full bg-[#7E5DF6]/10 items-center justify-center my-6">
+          <View
+            className="w-24 h-24 rounded-full items-center justify-center my-6"
+            style={{ backgroundColor: 'rgba(126, 93, 246, 0.1)' }}
+          >
             <ShieldCheck size={48} color="#7E5DF6" />
           </View>
 
@@ -86,13 +90,12 @@ export const OtpVerificationScreen: React.FC<Props> = ({ route, navigation }) =>
               return (
                 <View
                   key={idx}
-                  className={`w-12 h-14 rounded-2xl items-center justify-center border ${
-                    digit
-                      ? 'bg-white border-[#7E5DF6] shadow-sm'
-                      : isFocused
-                      ? 'bg-white border-[#7E5DF6]'
-                      : 'bg-[#F2F4F8] border-[#D8DCE6]'
-                  }`}
+                  className="w-12 h-14 rounded-2xl items-center justify-center border"
+                  style={{
+                    backgroundColor: digit || isFocused ? '#FFFFFF' : '#F2F4F8',
+                    borderColor: digit || isFocused ? '#7E5DF6' : '#D8DCE6',
+                    borderWidth: isFocused ? 2 : 1,
+                  }}
                 >
                   <TextInput
                     ref={(el) => {
