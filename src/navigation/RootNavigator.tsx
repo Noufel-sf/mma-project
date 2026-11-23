@@ -6,6 +6,8 @@ import { WelcomeScreen } from '@/features/onboarding/screens/WelcomeScreen';
 import { AccountTypeScreen } from '@/features/auth/screens/AccountTypeScreen';
 import { LoginScreen } from '@/features/auth/screens/LoginScreen';
 import { RegisterScreen } from '@/features/auth/screens/RegisterScreen';
+import { CompleteProfileScreen } from '@/features/auth/screens/CompleteProfileScreen';
+import { ProfessionalBackgroundScreen } from '@/features/auth/screens/ProfessionalBackgroundScreen';
 import { ForgotPasswordScreen } from '@/features/auth/screens/ForgotPasswordScreen';
 import { OtpVerificationScreen } from '@/features/auth/screens/OtpVerificationScreen';
 import { ResetPasswordScreen } from '@/features/auth/screens/ResetPasswordScreen';
@@ -28,6 +30,11 @@ export const RootNavigator: React.FC = () => {
       <Stack.Screen name="AccountType" component={AccountTypeScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Screen name="CompleteProfile" component={CompleteProfileScreen} />
+      <Stack.Screen
+        name="ProfessionalBackground"
+        component={ProfessionalBackgroundScreen}
+      />
       <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
       <Stack.Screen name="OtpVerification" component={OtpVerificationScreen} />
       <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />

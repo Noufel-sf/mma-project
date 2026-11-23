@@ -14,6 +14,8 @@ export type RootStackParamList = {
   AccountType: undefined;
   Login: undefined;
   Register: undefined;
+  CompleteProfile: undefined;
+  ProfessionalBackground: undefined;
   ForgotPassword: undefined;
   OtpVerification: { email: string };
   ResetPassword: { email?: string };

@@ -62,7 +62,7 @@ export const RegisterScreen: React.FC<Props> = ({ navigation }) => {
           memberSince: '2026',
         })
       );
-      navigation.replace('Main', { screen: 'Feed' });
+      navigation.navigate('CompleteProfile');
     }, 800);
   };
 
