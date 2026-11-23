@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, SafeAreaView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MainTabParamList } from '@/navigation/types';
 import { ChallengesFeedScreen } from '@/features/challenges/screens/ChallengesFeedScreen';
+import { CalendarScreen } from '@/features/challenges/screens/CalendarScreen';
+import { DocumentsScreen } from '@/features/challenges/screens/DocumentsScreen';
 import { ProfileScreen } from '@/features/profile/screens/ProfileScreen';
 import {
   Home,
@@ -13,15 +14,6 @@ import {
 } from 'lucide-react-native';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
-
-const PlaceholderScreen: React.FC<{ title: string }> = ({ title }) => (
-  <SafeAreaView className="flex-1 bg-white items-center justify-center p-6">
-    <Text className="text-xl font-bold text-black mb-2">{title}</Text>
-    <Text className="text-sm text-[#6B7280] text-center">
-      Feature screen synchronized with Point.43
-    </Text>
-  </SafeAreaView>
-);
 
 export const MainTabNavigator: React.FC = () => {
   return (
@@ -64,7 +56,7 @@ export const MainTabNavigator: React.FC = () => {
       />
       <Tab.Screen
         name="Calendar"
-        children={() => <PlaceholderScreen title="Hackathons & Deadlines" />}
+        component={CalendarScreen}
         options={{
           tabBarLabel: 'Calendar',
           tabBarIcon: ({ color, size }) => <Calendar size={size} color={color} />,
@@ -72,7 +64,7 @@ export const MainTabNavigator: React.FC = () => {
       />
       <Tab.Screen
         name="Documents"
-        children={() => <PlaceholderScreen title="Resources & Specs" />}
+        component={DocumentsScreen}
         options={{
           tabBarLabel: 'Docs',
           tabBarIcon: ({ color, size }) => <FileText size={size} color={color} />,
