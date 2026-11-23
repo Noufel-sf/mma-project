@@ -2,9 +2,9 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { Button } from '@/components/ui/Button';
@@ -15,10 +15,10 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Welcome'>;
 
 export const WelcomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView edges={['top', 'bottom', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
       <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        className="px-6 py-8 justify-between"
+        contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between' }}
+        className="px-6 py-8"
       >
         <View className="items-center justify-center flex-1 my-6">
           <View className="items-center justify-center relative my-4">

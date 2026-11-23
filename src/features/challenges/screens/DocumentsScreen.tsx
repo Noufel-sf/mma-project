@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
   TouchableOpacity,
   TextInput,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   FileText,
   Download,
@@ -99,9 +99,9 @@ export const DocumentsScreen: React.FC = () => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F9FAFB]">
+    <SafeAreaView edges={['top', 'left', 'right']} style={{ flex: 1, backgroundColor: '#F9FAFB' }}>
       {/* Header */}
-      <View className="px-6 pt-4 pb-3 bg-white border-b border-[#F3F4F6]">
+      <View className="px-6 pt-3 pb-3 bg-white border-b border-[#F3F4F6]">
         <View className="flex-row items-center justify-between mb-3">
           <View>
             <Text className="text-xs font-semibold text-[#7E5DF6] uppercase tracking-wider">

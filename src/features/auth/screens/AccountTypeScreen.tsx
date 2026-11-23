@@ -2,10 +2,10 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
   Image,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { RoleCard } from '@/components/ui/RoleCard';
@@ -20,10 +20,10 @@ export const AccountTypeScreen: React.FC<Props> = ({ navigation }) => {
   const selectedRole = useAppSelector((state) => state.auth.selectedRole);
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView edges={['top', 'bottom', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
       <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        className="px-6 py-6 justify-between"
+        contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between' }}
+        className="px-6 py-6"
       >
         <View className="items-center">
           <View className="w-56 h-56 items-center justify-center mb-4">

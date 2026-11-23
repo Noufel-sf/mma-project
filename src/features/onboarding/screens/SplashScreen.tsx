@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, SafeAreaView } from 'react-native';
+import { View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { Logo } from '@/components/ui/Logo';
@@ -38,7 +39,7 @@ export const SplashScreen: React.FC<Props> = ({ navigation }) => {
   }, [navigation, isAuthenticated]);
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView edges={['top', 'bottom', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
       <View className="flex-1 items-center justify-center px-6">
         <Logo size="lg" showSlogan showNumber />
         <View className="mt-8">

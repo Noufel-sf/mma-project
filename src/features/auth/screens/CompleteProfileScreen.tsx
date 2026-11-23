@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
   Image,
   TouchableOpacity,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { TextField } from '@/components/ui/TextField';
@@ -22,14 +22,13 @@ export const CompleteProfileScreen: React.FC<Props> = ({ navigation }) => {
   const [photoAdded, setPhotoAdded] = useState(false);
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView edges={['top', 'bottom', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
       <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        className="px-6 py-4 justify-between"
+        contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between' }}
+        className="px-6 py-4"
         keyboardShouldPersistTaps="handled"
       >
         <View className="items-center">
-          {/* Hero Illustration from Figma */}
           <View className="w-52 h-44 items-center justify-center my-2">
             <Image
               source={require('@/assets/images/complete-profile-illustration.png')}
@@ -38,7 +37,6 @@ export const CompleteProfileScreen: React.FC<Props> = ({ navigation }) => {
             />
           </View>
 
-          {/* Heading */}
           <Text className="text-[26px] font-bold text-black text-center mb-1">
             Complete Your Profile
           </Text>
@@ -46,9 +44,7 @@ export const CompleteProfileScreen: React.FC<Props> = ({ navigation }) => {
             Tell us a little about yourself to personalize your experience.
           </Text>
 
-          {/* Form Fields */}
           <View className="w-full gap-4">
-            {/* Photo Profile Button / Field */}
             <TouchableOpacity
               activeOpacity={0.8}
               onPress={() => setPhotoAdded(!photoAdded)}
@@ -78,7 +74,6 @@ export const CompleteProfileScreen: React.FC<Props> = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Footer Actions */}
         <View className="items-center gap-4 mt-6 mb-2">
           <View className="flex-row items-center justify-center gap-4 w-full">
             <Button

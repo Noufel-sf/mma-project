@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
   Image,
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -47,8 +47,8 @@ export const ProfileScreen: React.FC<Props> = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView className="flex-1 px-6 py-6" showsVerticalScrollIndicator={false}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
+      <ScrollView className="flex-1 px-6 py-4" showsVerticalScrollIndicator={false}>
         <View className="flex-row items-center justify-between mb-4">
           <View className="w-24 h-24 rounded-full border-4 border-[#5D67BC] p-1 items-center justify-center overflow-hidden shadow-sm">
             <Image

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { useAppSelector } from '@/store/hooks';
@@ -31,7 +31,7 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
 
   if (!challenge) {
     return (
-      <SafeAreaView className="flex-1 bg-white items-center justify-center p-6">
+      <SafeAreaView edges={['top', 'bottom', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }} className="items-center justify-center p-6">
         <Text className="text-lg font-bold text-black mb-4">
           Challenge not found
         </Text>
@@ -50,7 +50,7 @@ export const ChallengeDetailScreen: React.FC<Props> = ({ route, navigation }) =>
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView edges={['top', 'bottom', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
       <View className="flex-row items-center justify-between px-6 py-4 border-b border-[#F3F4F6]">
         <TouchableOpacity
           onPress={() => navigation.goBack()}

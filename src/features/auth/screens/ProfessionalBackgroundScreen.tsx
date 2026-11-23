@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
   Image,
   TouchableOpacity,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { Button } from '@/components/ui/Button';
@@ -38,13 +38,12 @@ export const ProfessionalBackgroundScreen: React.FC<Props> = ({ navigation }) =>
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView edges={['top', 'bottom', 'left', 'right']} style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
       <ScrollView
-        contentContainerStyle={{ flexGrow: 1 }}
-        className="px-6 py-4 justify-between"
+        contentContainerStyle={{ flexGrow: 1, justifyContent: 'space-between' }}
+        className="px-6 py-4"
       >
         <View className="items-center">
-          {/* Illustration from Figma */}
           <View className="w-56 h-48 items-center justify-center my-2">
             <Image
               source={require('@/assets/images/background-info-illustration.png')}
@@ -53,7 +52,6 @@ export const ProfessionalBackgroundScreen: React.FC<Props> = ({ navigation }) =>
             />
           </View>
 
-          {/* Heading */}
           <Text className="text-[24px] font-bold text-black text-center mb-2">
             Your Professional Background
           </Text>
@@ -61,7 +59,6 @@ export const ProfessionalBackgroundScreen: React.FC<Props> = ({ navigation }) =>
             Build your professional profile by selecting your skills and areas of interest to help us personalize your challenges.
           </Text>
 
-          {/* Skill Selector Chips */}
           <View className="w-full flex-row flex-wrap gap-2.5 justify-center mb-4">
             {skillOptions.map((skill) => {
               const isSelected = selectedSkills.includes(skill);
@@ -89,7 +86,6 @@ export const ProfessionalBackgroundScreen: React.FC<Props> = ({ navigation }) =>
           </View>
         </View>
 
-        {/* Footer Actions */}
         <View className="items-center gap-4 mt-6 mb-2">
           <View className="flex-row items-center justify-center gap-4 w-full">
             <Button

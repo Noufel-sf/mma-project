@@ -2,11 +2,11 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
   FlatList,
   TouchableOpacity,
   TextInput,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/navigation/types';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
@@ -112,8 +112,8 @@ export const ChallengesFeedScreen: React.FC<Props> = ({ navigation }) => {
   );
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F9FAFB]">
-      <View className="px-6 pt-4 pb-2 bg-white border-b border-[#F3F4F6]">
+    <SafeAreaView edges={['top', 'left', 'right']} style={{ flex: 1, backgroundColor: '#F9FAFB' }}>
+      <View className="px-6 pt-3 pb-2 bg-white border-b border-[#F3F4F6]">
         <View className="flex-row items-center justify-between mb-3">
           <View>
             <Text className="text-xs font-semibold text-[#7E5DF6] uppercase tracking-wider">
